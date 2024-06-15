@@ -189,14 +189,14 @@ export class CatalogComponent {
     ];
   }
 
+  addToCart(product: IProduct) {
+    this.cart.push(product);
+    console.log(`product ${product.name} added to cart`);
+  }
+
   getFilteredProducts() {
     return this.filter === ''
       ? this.products
       : this.products.filter((products: any) => products.category === this.filter);
   }
-
-  addToCart(product: IProduct) {
-    console.log(`product #{product.name} added to cart`);
-  }
-
 }
