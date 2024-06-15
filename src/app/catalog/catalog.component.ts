@@ -9,6 +9,7 @@ import { IProduct } from './product.model';
 export class CatalogComponent {
   products: any;
   filter: string = '';
+  cart: IProduct[] = [];
 
   constructor() {
     this.products = [
@@ -90,7 +91,7 @@ export class CatalogComponent {
         price: 285,
         discount: 0,
       },
-    
+
       {
         id: 4,
         description: "A simple single-eyed head -- simple and inexpensive.",
@@ -188,15 +189,15 @@ export class CatalogComponent {
     ];
   }
 
-  getImageUrl(product: IProduct) {
-    if (!product) return '';
-    return '/assets/images/robot-parts/' + product.imageName;
+  addToCart(product: IProduct) {
+    this.cart.push(product);
+    console.log(`product ${product.name} added to cart`);
   }
 
   getFilteredProducts() {
     return this.filter === ''
-    ? this.products
-    : this.products.filter((products: any) => products.category === this.filter);
+      ? this.products
+      : this.products.filter((products: any) => products.category === this.filter);
   }
 
   getDiscountedClasses(producT: IProduct){
