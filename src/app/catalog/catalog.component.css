@@ -1,8 +1,8 @@
-.bold {
-  font-weight: bold;
-}
+  .bold {
+    font-weight: bold;
+  }
 
-.container {
+  .container {
     display: flex;
     flex-direction: column;
   }
@@ -24,4 +24,9 @@
   
   .product-item {
     border-bottom: 2px solid #999;
+  }
+
+  .strikethrough {
+    text-decoration: line-through;
+    font-size: 18px;
   }
