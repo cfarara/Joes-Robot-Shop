@@ -7,11 +7,13 @@
       name="email"
       placeholder="Email Address"
       type="text"
+      [(ngModel)]="credentials.email"
     />
     <input
       name="password"
       placeholder="Password"
       type="password"
+      [(ngModel)]="credentials.password"
     />
     <div class="buttons">
       <button type="submit"class="button cta">
